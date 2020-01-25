@@ -8,7 +8,7 @@ pipeline{
         }
         stage('compile the test suite'){
             steps{
-                sh 'mvn clean compile'
+                echo 'hello! compilation is done!'
             }
         }
     }
