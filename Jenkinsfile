@@ -8,8 +8,8 @@ pipeline{
         }
         stage('compile the test suite'){
             steps{
-                withMaven(maven : 'maven_4_0_0'){
-                    sh 'mvn compile'
+                withMaven(maven : 'maven_3_6_3'){
+                    sh 'mvn clean compile'
                 }
             }
         }
