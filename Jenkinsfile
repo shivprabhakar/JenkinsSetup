@@ -8,8 +8,10 @@ pipeline{
         }
         stage('compile the test suite'){
             steps{
-                echo 'hello! compilation is done!'
+                withMaven(maven : 'maven_4_0_0'){
+                    sh 'mvn compile'
+                }
             }
         }
     }
-}
+}  
