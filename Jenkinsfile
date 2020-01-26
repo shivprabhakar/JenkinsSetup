@@ -20,7 +20,7 @@ pipeline{
                script{
                     //def mvnHome = tool name: 'maven_3_6_3', type: 'maven'
                     def mvnHome = tool 'maven_3_6_3'
-                    bat script: "${mvnHome}/bin/mvn clean compile"
+                    bat script: "'${mvnHome}/bin/mvn' clean compile"
                     //sh 'mvn clean compile'
                }
             }
