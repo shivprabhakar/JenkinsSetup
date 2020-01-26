@@ -16,13 +16,19 @@ pipeline{
                 maven 'maven_3_6_3'
             }
             steps{
-                script{
-                    //def mvnHome = tool name: 'maven_3_6_3', type: 'maven'
-                    def mvnHome = tool 'maven_3_6_3'
-                    bat script: "${mvnHome}/bin/mvn clean compile"
-                    //sh 'mvn clean compile'
+                withMaven(maven : 'apache-maven-3_6_3') {
+                    bat 'mvn clean compile'
                 }
             }
+                
+             //   script{
+                    //def mvnHome = tool name: 'maven_3_6_3', type: 'maven'
+             //       def mvnHome = tool 'maven_3_6_3'
+             //       bat script: "${mvnHome}/bin/mvn clean compile"
+                    //sh 'mvn clean compile'
+             //   }
+            
+            //}
         }
     }
 }  
