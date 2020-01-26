@@ -12,9 +12,13 @@ pipeline{
             }
         }
         stage('compile the test suite'){
+            tools{
+                maven 'maven_3_6_3'
+            }
             steps{
-                def mvnHome = tool name: 'maven_3_6_3', type: 'maven'
-                sh "${mvnHome}/bin/mvn clean compile"
+                //def mvnHome = tool name: 'maven_3_6_3', type: 'maven'
+                //sh "${mvnHome}/bin/mvn clean compile"
+                sh 'mvn clean compile'
             }
         }
     }
