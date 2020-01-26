@@ -7,7 +7,9 @@ pipeline{
             }
         }
         stage('Git checkout'){
-            git 'https://github.com/shivprabhakar/JenkinsSetup.git'
+            steps{
+                git 'https://github.com/shivprabhakar/JenkinsSetup.git'
+            }
         }
         stage('compile the test suite'){
             steps{
