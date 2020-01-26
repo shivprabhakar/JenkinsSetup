@@ -16,7 +16,7 @@ pipeline{
                 maven 'maven_3_6_3'
             }
             steps{
-                bat 'mvn clean compile'
+                bat 'mvn install'
                //script{
                     //def mvnHome = tool name: 'maven_3_6_3', type: 'maven'
                     //def mvnHome = tool 'maven_3_6_3'
